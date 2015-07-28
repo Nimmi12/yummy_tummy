@@ -1,0 +1,77 @@
+ <% content_for :javascript_includes do %>
+  <%= javascript_include_tag "categories" %>
+<% end %>
+
+ <%= stylesheet_link_tag "categories" %>
+
+ <%# @categories.each do |category| %>
+ <%#= category.name %>
+ <%#= image_tag category.image.url(:medium) %>
+ <%# end %>
+
+
+
+<div class="container">
+<div class="col-xs-12">     
+
+    <div class="page-header">
+        <h3>Bootstrap 3.3.0</h3>
+        <p>Responsive Moving Box Carousel </p>
+    </div>
+            
+    <div class="carousel slide" id="myCarousel">
+        <div class="carousel-inner">
+        <%all_categories = Category.all %>
+            <div class="item active">
+                    <ul class="thumbnails">
+                    <% first_4_category, index = return_next_4_objects(all_categories, 0) %>
+                    <% first_4_category.each do |category| %>
+                        <li class="col-sm-3">
+                            <div class="fff">
+                                <div class="thumbnail">
+                                     <%= link_to image_tag category.image %>
+                                </div>
+                                <div class="caption">
+                                    <h4><%= category.name %></h4>
+                                </div>
+                            </div>
+                        </li>
+                       <% end %>
+                    </ul>
+              </div><!-- /Slide1 --> 
+            <div class="item">
+                    <ul class="thumbnails">
+                    <% next_4_category,index_2 = return_next_4_objects(all_categories, index) %>
+                    <% next_4_category.each do |category| %>
+                        <li class="col-sm-3">
+                            <div class="fff">
+                                <div class="thumbnail">
+                                     <%= link_to image_tag category.image %>
+                                </div>
+                                <div class="caption">
+                                    <h4><%= category.name %></h4>
+                                    <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                    <a class="btn btn-mini" href="#">» Read More</a>
+                                </div>
+                            </div>
+                        </li>
+                        <% end %>
+                    </ul>
+              </div><!-- /Slide2 --> 
+          
+        </div>
+        
+       
+       <nav>
+            <ul class="control-box pager">
+                <li><a data-slide="prev" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-left"></i></a></li>
+                <li><a data-slide="next" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-right"></i></li>
+            </ul>
+        </nav>
+       <!-- /.control-box -->   
+                              
+    </div><!-- /#myCarousel -->
+        
+</div><!-- /.col-xs-12 -->          
+
+</div><!-- /.container -->
