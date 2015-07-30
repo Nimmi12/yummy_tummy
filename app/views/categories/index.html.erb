@@ -21,11 +21,10 @@
             
     <div class="carousel slide" id="myCarousel">
         <div class="carousel-inner">
-        <%all_categories = Category.all %>
+        <%@categories_splitted %>
             <div class="item active">
                     <ul class="thumbnails">
-                    <% first_4_category, index = return_next_4_objects(all_categories, 0) %>
-                    <% first_4_category.each do |category| %>
+                    <% @categories_in_first_page.each do |category| %>
                         <li class="col-sm-3">
                             <div class="fff">
                                 <div class="thumbnail">
@@ -39,10 +38,11 @@
                        <% end %>
                     </ul>
               </div><!-- /Slide1 --> 
+            
+            <% @all_remaining_categories_list.each do |category_in_current_page| %>
             <div class="item">
                     <ul class="thumbnails">
-                    <% next_4_category,index_2 = return_next_4_objects(all_categories, index) %>
-                    <% next_4_category.each do |category| %>
+                    <% category_in_current_page.each do |category| %>
                         <li class="col-sm-3">
                             <div class="fff">
                                 <div class="thumbnail">
@@ -58,7 +58,7 @@
                         <% end %>
                     </ul>
               </div><!-- /Slide2 --> 
-          
+              <% end %>
         </div>
         
        
