@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'recepies/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'categories/index'
 
@@ -18,11 +20,9 @@ Rails.application.routes.draw do
   #   resources :products
 
   # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
+     resources :categories do
+       resources :recepies
+      end
   #
   #     collection do
   #       get 'sold'

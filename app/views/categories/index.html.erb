@@ -4,13 +4,6 @@
 
  <%= stylesheet_link_tag "categories" %>
 
- <%# @categories.each do |category| %>
- <%#= category.name %>
- <%#= image_tag category.image.url(:medium) %>
- <%# end %>
-
-
-
 <div class="container">
 <div class="col-xs-12">     
 
@@ -28,7 +21,7 @@
                         <li class="col-sm-3">
                             <div class="fff">
                                 <div class="thumbnail">
-                                     <%= link_to image_tag category.image %>
+                                     <%= link_to image_tag(category.image), category_recepies_path(category_id: category.id) %>
                                 </div>
                                 <div class="caption">
                                     <h4><%= category.name %></h4>
@@ -46,7 +39,7 @@
                         <li class="col-sm-3">
                             <div class="fff">
                                 <div class="thumbnail">
-                                     <%= link_to image_tag category.image %>
+                                     <%= link_to image_tag(category.image) ,category_recepies_path(category_id: category.id)%>
                                 </div>
                                 <div class="caption">
                                     <h4><%= category.name %></h4>
