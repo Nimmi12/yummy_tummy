@@ -236,10 +236,6 @@ li {
  * @package PARALLAX LOGIN.
  */
 /* line 9, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/login.scss */
-body {
-  background-color: #444;
-  background-image: url(/assets/bckgrnd-8d5b3b4bf4af1323b103d48fa04645e73c22601951745e395089782e73d771fa.jpg);
-}
 
 /* line 14, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/login.scss */
 .form-signin input[type="text"] {
