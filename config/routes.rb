@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  devise_for :users
   get 'recepies/index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
      resources :categories do
        resources :recepies
       end
+     resources :comments
   #
   #     collection do
   #       get 'sold'

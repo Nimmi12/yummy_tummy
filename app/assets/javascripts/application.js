@@ -16,3 +16,11 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+
+$(document).ready(function(){
+  $('.comment').each(function() {
+  	 console.log($( this ));
+  $( this ).emoticonize();
+});
+
+});

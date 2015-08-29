@@ -1,0 +1,73 @@
+<!-- <div>
+<table class="table table-bordered">
+
+</table>
+</div>
+<div><%= @recepie.description %>
+</div> -->
+
+<%= stylesheet_link_tag "recepies" %>
+<%= javascript_include_tag "recepie-comments" %>
+
+<div class="container">
+<h3><%= @recepie.name %></h3 class="heading-padding">
+    	<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title">Ingredients</h3>
+					</div>
+					<table class="table table-padding">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Quantity</th>
+								<th>Unit</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% @recepie.ingredients.each do |ingredient| %>
+							<tr>
+							<td><%= ingredient.name %></td>
+							<td><%= ingredient.quantity %></td>
+							<td><%= ingredient.units %></td>
+							<tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div>
+		<h3> Preparation Method </h3>
+		<p><%=  @recepie.description.gsub(/\./, '<br>').html_safe %></p>
+
+		</div>
+	<div class="detailBox">
+    <div class="titleBox">
+      <label>Comments</label>
+        <button type="button" class="close" aria-hidden="true">&times;</button>
+    </div>
+    <div class="actionBox">
+        <% comments =  @recepie.comments %>
+		<div id = 'comment_listing'>
+		    <%= render 'comment_list', comments: comments %>
+        </div>
+       
+       <%= form_tag(comments_path,:method=>'post', category: @category, recepie: @recepie, class:"form-inline", remote: true) do%>
+		 <div class="form-group">
+			 <%  if user_signed_in? %>
+				<%= hidden_field_tag :user, current_user.id %>
+				<% placeholder =  "Enter Your Comments" %>
+			<% else %>
+				<% placeholder =  "Please Sign in to Write Comments" %>
+			<% end %>
+		<%= hidden_field_tag :recepie, @recepie.id %>
+		<%= text_area_tag 'comment', nil, class:"form-control", placeholder: placeholder, id: "comment_area"%>
+		<%= submit_tag 'Post', class: "btn btn-default" %>
+		 </div>
+		<% end %>
+    </div>
+</div>
+</div>
+

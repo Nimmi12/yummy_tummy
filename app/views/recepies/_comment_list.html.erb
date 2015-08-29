@@ -1,0 +1,15 @@
+<ul class="commentList">
+<% comments = @comments if @comments%>
+<% unless comments.blank? %>	
+	<% comments.each do |comment| %>
+	    <li>
+	        <div class="commenterImage">
+	        <%=  image_tag(comment.user.avatar) %> 
+	        </div>
+	        <div class="commentText comment">
+	            <p class=""><%= comment.comment %></p> <span class="date sub-text">on <%= comment.created_at %></span>
+	        </div>
+	    </li>
+	  <% end %>
+  <% end %>
+</ul>

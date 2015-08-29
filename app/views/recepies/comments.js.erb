@@ -1,0 +1,8 @@
+$('#comment_listing').html("<%= j render '/recepies/comment_list'  %>")
+$('#comment_area').val("");
+
+//After the ajax call , css for smileys were not loading,
+  $('.comment').each(function() {
+  $(this).emoticonize();
+});
+

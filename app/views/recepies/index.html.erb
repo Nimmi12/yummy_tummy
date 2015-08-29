@@ -1,0 +1,8 @@
+<h1>Recepie</h1>
+<% if @recepies.present? %>
+<% @recepies.each do |receipe| %>
+  <%= link_to image_tag(receipe.image), category_recepy_path(params[:category_id], receipe) %>
+<% end %>
+<% else %>
+<%= p "No Receipes Found!!!!" %>
+<% end %>

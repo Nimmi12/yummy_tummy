@@ -1,0 +1,119 @@
+/* Global */
+/* line 5, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 7, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+a {
+  -webkit-transition: all 150ms ease;
+  -moz-transition: all 150ms ease;
+  -ms-transition: all 150ms ease;
+  -o-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+
+/* line 14, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+a:hover {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  /* IE 8 */
+  filter: alpha(opacity=50);
+  /* IE7 */
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+/* line 23, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+body {
+  border-top: 0;
+  background: #c4e17f;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%);
+}
+
+/* line 24, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+.thumbnails li > .fff .caption {
+  background: #fff !important;
+  padding: 10px;
+}
+
+/* Page Header */
+/* line 26, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+.page-header {
+  background: #f9f9f9;
+  margin: -30px -40px 40px;
+  padding: 20px 40px;
+  border-top: 4px solid #ccc;
+  color: #999;
+  text-transform: uppercase;
+}
+
+/* line 34, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+.page-header h3 {
+  line-height: 0.88rem;
+  color: #000;
+}
+
+/* Thumbnail Box */
+/* line 42, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+.caption h4 {
+  color: #444;
+}
+
+/* line 46, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+.caption p {
+  color: #999;
+}
+
+/* Carousel Control */
+/* line 56, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+.control-box {
+  text-align: right;
+  width: 100%;
+}
+
+/* line 60, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+.carousel-control {
+  background: #666;
+  border: 0px;
+  border-radius: 0px;
+  display: inline-block;
+  font-size: 34px;
+  font-weight: 200;
+  line-height: 18px;
+  opacity: 0.5;
+  padding: 4px 10px 0px;
+  position: static;
+  height: 30px;
+  width: 15px;
+}
+
+/* Mobile Only */
+@media (max-width: 767px) {
+  /* line 81, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+  .page-header, .control-box {
+    text-align: center;
+  }
+}
+@media (max-width: 479px) {
+  /* line 86, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+  .caption {
+    word-break: break-all;
+  }
+}
+/* line 92, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+li {
+  list-style-type: none;
+}
+
+/* line 94, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+::selection {
+  background: #ff5e99;
+  color: #FFFFFF;
+  text-shadow: 0;
+}
+
+/* line 95, /home/nimmimathew/yummy_tummy/app/assets/stylesheets/categories.scss */
+::-moz-selection {
+  background: #ff5e99;
+  color: #FFFFFF;
+}

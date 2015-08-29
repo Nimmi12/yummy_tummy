@@ -24,15 +24,25 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+           <%  if user_signed_in? %>
+           <li class ="login"><%= link_to "Signed in as #{current_user.name}", new_user_session_path %></li>
+           <li ><%= link_to "SignOut", destroy_user_session_path, method: "DELETE" %></li>
+           <% else %>
+            <li class ="login"><%= link_to "Login", new_user_session_path %></li>
+           <% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
        <%= yield %>
-
     </div><!-- /.container -->
 
 </body>
