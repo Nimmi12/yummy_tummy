@@ -1,4 +1,7 @@
 // Carousel Auto-Cycle
   $(document).ready(function() {
-    $('.carousel').carousel();
+	$('.carousel').carousel({
+		interval: 1000 * 10
+	});
+
   });
